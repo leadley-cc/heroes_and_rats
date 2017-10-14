@@ -2,6 +2,7 @@ const Hero = function (name, favouriteFood) {
   this.name = name
   this.health = 20
   this.favouriteFood = favouriteFood
+  this.questLog = []
 }
 
 Hero.prototype = {

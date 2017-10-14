@@ -25,6 +25,6 @@ describe("Hero", () => {
   })
 
   it("should start with an empty quest log", () => {
-    assert.strictEqual(hero.questLog, [])
+    assert.deepStrictEqual(hero.questLog, [])
   })
 })
