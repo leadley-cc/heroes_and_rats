@@ -25,7 +25,7 @@ describe("Quest", () => {
     assert.deepStrictEqual(quest.reward, expected)
   })
 
-  it("should start with status available", () => {
-    assert.strictEqual(quest.status, Quest.statuses.AVAILABLE)
+  it("should start with false completed available", () => {
+    assert.strictEqual(quest.completed, false)
   })
 })

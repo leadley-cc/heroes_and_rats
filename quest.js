@@ -2,7 +2,7 @@ const Quest = function (difficulty, urgency, reward) {
   this.difficulty = difficulty
   this.urgency = urgency
   this.reward = reward
-  this.status = 0
+  this.completed = false
 }
 
 Quest.difficulties = {
@@ -18,12 +18,6 @@ Quest.urgencies = {
   MEDIUM: 1,
   HIGH: 2,
   EXTREME: 3
-}
-
-Quest.statuses = {
-  AVAILABLE: 0,
-  IN_PROGRESS: 1,
-  COMPLETED: 2
 }
 
 module.exports = Quest
