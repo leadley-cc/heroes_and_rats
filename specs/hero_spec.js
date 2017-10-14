@@ -74,7 +74,7 @@ describe("Hero", () => {
     hero.takeQuest(quest1)
     hero.takeQuest(quest2)
 
-    expected = [quest2, quest1]
+    var expected = [quest2, quest1]
     assert.deepStrictEqual(hero.questsByDifficulty(), expected)
   })
 
@@ -82,7 +82,25 @@ describe("Hero", () => {
     hero.takeQuest(quest1)
     hero.takeQuest(quest2)
 
-    expected = [quest2, quest1]
+    var expected = [quest2, quest1]
     assert.deepStrictEqual(hero.questsByUrgency(), expected)
+  })
+
+  it("should be able to select completed quests", () => {
+    hero.takeQuest(quest1)
+    hero.takeQuest(quest2)
+    quest1.complete()
+
+    var expected = [quest1]
+    assert.deepStrictEqual(hero.completedQuests(), expected)
+  })
+
+  xit("should be able to select incomplete quests", () => {
+    hero.takeQuest(quest1)
+    hero.takeQuest(quest2)
+    quest1.complete()
+
+    var expected = [quest2]
+    assert.deepStrictEqual(hero.incompleteQuests(), expected)
   })
 })

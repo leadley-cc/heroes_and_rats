@@ -32,6 +32,12 @@ Hero.prototype = {
     return this.questLog.sort(
       (questA, questB) => questA.urgency - questB.urgency
     )
+  },
+
+  completedQuests: function () {
+    return this.questLog.filter(
+      quest => quest.completed
+    )
   }
 }
 
