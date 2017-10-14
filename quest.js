@@ -23,6 +23,7 @@ Quest.urgencies = {
 Quest.prototype = {
   complete: function () {
     this.completed = true
+    return this.reward
   }
 }
 

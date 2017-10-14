@@ -1,5 +1,6 @@
 const assert = require("assert")
 const Hero = require("../hero")
+const Reward = require("../reward")
 const Quest = require("../quest")
 const Food = require("../food")
 
@@ -15,12 +16,12 @@ describe("Hero", () => {
     quest1 = new Quest(
       Quest.difficulties.HARD,
       Quest.urgencies.HIGH,
-      new Map([["XP", 150], ["Gold", 100]])
+      new Reward(100, 150, [])
     )
     quest2 = new Quest(
       Quest.difficulties.EASY,
       Quest.urgencies.LOW,
-      new Map([["XP", 20], ["Gold", 15]])
+      new Reward(15, 20, [])
     )
     apple = new Food("apple", 4)
     cheese = new Food("cheese", 6)

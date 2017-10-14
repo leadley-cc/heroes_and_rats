@@ -1,4 +1,5 @@
 const assert = require("assert")
+const Reward = require("../reward")
 const Quest = require("../quest")
 
 describe("Quest", () => {
@@ -8,7 +9,7 @@ describe("Quest", () => {
     quest = new Quest(
       Quest.difficulties.HARD,
       Quest.urgencies.HIGH,
-      new Map([["XP", 150], ["Gold", 100]])
+      new Reward(100, 150, [])
     )
   })
 
@@ -21,7 +22,7 @@ describe("Quest", () => {
   })
 
   it("should have a reward", () => {
-    var expected = new Map([["XP", 150], ["Gold", 100]])
+    var expected = new Reward(100, 150, [])
     assert.deepStrictEqual(quest.reward, expected)
   })
 
