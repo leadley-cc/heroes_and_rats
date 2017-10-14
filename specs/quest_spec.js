@@ -28,4 +28,9 @@ describe("Quest", () => {
   it("should start with false completed available", () => {
     assert.strictEqual(quest.completed, false)
   })
+
+  it("should be able to set completed status", () => {
+    quest.complete()
+    assert.strictEqual(quest.completed, true)
+  })
 })

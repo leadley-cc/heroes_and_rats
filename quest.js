@@ -20,4 +20,10 @@ Quest.urgencies = {
   EXTREME: 3
 }
 
+Quest.prototype = {
+  complete: function () {
+    this.completed = true
+  }
+}
+
 module.exports = Quest
