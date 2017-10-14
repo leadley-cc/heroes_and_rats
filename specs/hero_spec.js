@@ -21,7 +21,7 @@ describe("Hero", () => {
   })
 
   it("should be able to talk", () => {
-    assert.strictEqual(hero.talk(), "I am the great adventurer Michael")
+    assert.strictEqual(hero.talk(), "I am the great adventurer Michael!")
   })
 
   it("should start with an empty quest log", () => {

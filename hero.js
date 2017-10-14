@@ -4,4 +4,10 @@ const Hero = function (name, favouriteFood) {
   this.favouriteFood = favouriteFood
 }
 
+Hero.prototype = {
+  talk: function () {
+    return `I am the great adventurer ${this.name}!`
+  }
+}
+
 module.exports = Hero
