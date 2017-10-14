@@ -3,6 +3,8 @@ const Hero = function (name, favouriteFood) {
   this.health = 20
   this.favouriteFood = favouriteFood
   this.questLog = []
+  this.gold = 0
+  this.experience = 0
 }
 
 Hero.prototype = {

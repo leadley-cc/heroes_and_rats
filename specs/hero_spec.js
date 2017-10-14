@@ -46,6 +46,14 @@ describe("Hero", () => {
     assert.deepStrictEqual(hero.questLog, [])
   })
 
+  it("should start with 0 gold", () => {
+    assert.strictEqual(hero.gold, 0)
+  })
+
+  it("should start with 0 xp", () => {
+    assert.strictEqual(hero.experience, 0)
+  })
+
   it("should be able to eat food to replenish health", () => {
     hero.eat(apple)
     assert.strictEqual(hero.health, 24)
