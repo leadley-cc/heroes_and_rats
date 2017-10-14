@@ -20,6 +20,12 @@ Hero.prototype = {
 
   takeQuest: function (quest) {
     this.questLog.push(quest)
+  },
+
+  questsByDifficulty: function () {
+    return this.questLog.sort(
+      (questA, questB) => questA.difficulty - questB.difficulty
+    )
   }
 }
 

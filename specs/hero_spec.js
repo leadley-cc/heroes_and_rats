@@ -56,9 +56,35 @@ describe("Hero", () => {
     assert.strictEqual(hero.health, 29)
   })
 
-  it("should be able to add quests to their quest log", () => {
+  it("should be able to add a quest to their quest log", () => {
     hero.takeQuest(quest1)
     assert.strictEqual(hero.questLog.length, 1)
     assert.ok(hero.questLog.includes(quest1))
+  })
+
+  it("should be able to add multiple quests to their quest log", () => {
+    hero.takeQuest(quest1)
+    hero.takeQuest(quest2)
+    assert.strictEqual(hero.questLog.length, 2)
+    assert.ok(hero.questLog.includes(quest1))
+    assert.ok(hero.questLog.includes(quest2))
+  })
+
+  it("should be able to sort quest log by difficulty", () => {
+    hero.takeQuest(quest1)
+    hero.takeQuest(quest2)
+
+    expected = [quest2, quest1]
+
+    assert.deepStrictEqual(hero.questsByDifficulty(), expected)
+  })
+
+  xit("should be able to sort quest log by urgency", () => {
+    hero.takeQuest(quest1)
+    hero.takeQuest(quest2)
+
+    expected = [quest2, quest1]
+
+    assert.deepStrictEqual(hero.questsByUrgency(), expected)
   })
 })
