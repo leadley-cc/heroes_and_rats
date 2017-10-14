@@ -8,6 +8,14 @@ const Hero = function (name, favouriteFood) {
 Hero.prototype = {
   talk: function () {
     return `I am the great adventurer ${this.name}!`
+  },
+
+  eat: function (food) {
+    if (this.favouriteFood === food.name) {
+      this.health += food.replenishment * 1.5
+    } else {
+      this.health += food.replenishment
+    }
   }
 }
 
