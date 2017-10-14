@@ -95,7 +95,7 @@ describe("Hero", () => {
     assert.deepStrictEqual(hero.completedQuests(), expected)
   })
 
-  xit("should be able to select incomplete quests", () => {
+  it("should be able to select incomplete quests", () => {
     hero.takeQuest(quest1)
     hero.takeQuest(quest2)
     quest1.complete()

@@ -38,6 +38,12 @@ Hero.prototype = {
     return this.questLog.filter(
       quest => quest.completed
     )
+  },
+
+  incompleteQuests: function () {
+    return this.questLog.filter(
+      quest => quest.completed === false
+    )
   }
 }
 
