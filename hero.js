@@ -16,6 +16,10 @@ Hero.prototype = {
     } else {
       this.health += food.replenishment
     }
+  },
+
+  takeQuest: function (quest) {
+    this.questLog.push(quest)
   }
 }
 
