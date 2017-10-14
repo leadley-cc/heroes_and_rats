@@ -75,16 +75,14 @@ describe("Hero", () => {
     hero.takeQuest(quest2)
 
     expected = [quest2, quest1]
-
     assert.deepStrictEqual(hero.questsByDifficulty(), expected)
   })
 
-  xit("should be able to sort quest log by urgency", () => {
+  it("should be able to sort quest log by urgency", () => {
     hero.takeQuest(quest1)
     hero.takeQuest(quest2)
 
     expected = [quest2, quest1]
-
     assert.deepStrictEqual(hero.questsByUrgency(), expected)
   })
 })

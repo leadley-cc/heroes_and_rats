@@ -26,6 +26,12 @@ Hero.prototype = {
     return this.questLog.sort(
       (questA, questB) => questA.difficulty - questB.difficulty
     )
+  },
+
+  questsByUrgency: function () {
+    return this.questLog.sort(
+      (questA, questB) => questA.urgency - questB.urgency
+    )
   }
 }
 
