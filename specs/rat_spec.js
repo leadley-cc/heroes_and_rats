@@ -16,4 +16,8 @@ describe("Rat", () => {
   it("should have the correct health value", () => {
     assert.strictEqual(giantRat.health, 30)
   })
+
+  it("should have the correct attack value", () => {
+    assert.strictEqual(giantRat.attack, 10)
+  })
 })

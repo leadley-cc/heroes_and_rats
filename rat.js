@@ -6,8 +6,16 @@ const Rat = function (type) {
     GIANT: 30
   }
 
+  var attackValues = {
+    TINY: 2,
+    SMALL: 4,
+    LARGE: 7,
+    GIANT: 10
+  }
+
   this.type = type
   this.health = healthValues[type]
+  this.attack = attackValues[type]
 }
 
 module.exports = Rat
