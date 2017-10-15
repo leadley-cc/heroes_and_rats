@@ -24,6 +24,13 @@ Hero.prototype = {
     this.questLog.push(quest)
   },
 
+  completeQuest: function (quest) {
+    if (this.questLog.indexOf(quest) === -1) return
+    quest.complete()
+    this.gold += quest.reward.gold
+    this.experience += quest.reward.experience
+  },
+
   questsByDifficulty: function () {
     return this.questLog.sort(
       (questA, questB) => questA.difficulty - questB.difficulty

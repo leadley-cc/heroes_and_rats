@@ -79,6 +79,19 @@ describe("Hero", () => {
     assert.ok(hero.questLog.includes(quest2))
   })
 
+  it("should be able to complete a quest and gain the reward", () => {
+    hero.takeQuest(quest1)
+    hero.completeQuest(quest1)
+    assert.strictEqual(hero.gold, 100)
+    assert.strictEqual(hero.experience, 150)
+  })
+
+  it("should not be able to complete a quest not on their quest log", () => {
+    hero.completeQuest(quest2)
+    assert.strictEqual(hero.gold, 0)
+    assert.strictEqual(hero.experience, 0)
+  })
+
   it("should be able to sort quest log by difficulty", () => {
     hero.takeQuest(quest1)
     hero.takeQuest(quest2)
