@@ -70,6 +70,12 @@ describe("Hero", () => {
     assert.strictEqual(hero.health, 29)
   })
 
+  it("should be able to eat touched food and lose health", () => {
+    apple.touch()
+    hero.eat(apple)
+    assert.strictEqual(hero.health, 16)
+  })
+
   it("should be able to add a quest to their quest log", () => {
     hero.takeQuest(quest1)
     assert.strictEqual(hero.questLog.length, 1)
