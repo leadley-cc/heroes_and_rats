@@ -55,6 +55,11 @@ describe("Hero", () => {
     assert.strictEqual(hero.experience, 0)
   })
 
+  it("should start with an empty inventory", () => {
+    var expected = { food: [], weapons: [], armour: [], spells: [] }
+    assert.deepStrictEqual(hero.inventory, expected)
+  })
+
   it("should be able to eat food to replenish health", () => {
     hero.eat(apple)
     assert.strictEqual(hero.health, 24)

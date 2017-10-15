@@ -5,6 +5,12 @@ const Hero = function (name, favouriteFood) {
   this.questLog = []
   this.gold = 0
   this.experience = 0
+  this.inventory = {
+    food: [],
+    weapons: [],
+    armour: [],
+    spells: []
+  }
 }
 
 Hero.prototype = {
