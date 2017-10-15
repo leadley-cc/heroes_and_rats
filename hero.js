@@ -32,9 +32,9 @@ Hero.prototype = {
 
   completeQuest: function (quest) {
     if (this.questLog.indexOf(quest) === -1) return
-    quest.complete()
-    this.gold += quest.reward.gold
-    this.experience += quest.reward.experience
+    var reward = quest.complete()
+    this.gold += reward.gold
+    this.experience += reward.experience
   },
 
   questsByDifficulty: function () {
