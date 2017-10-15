@@ -95,6 +95,14 @@ describe("Hero", () => {
     assert.deepStrictEqual(hero.questsByUrgency(), expected)
   })
 
+  it("should be able to sort quest log by gold reward", () => {
+    hero.takeQuest(quest1)
+    hero.takeQuest(quest2)
+
+    var expected = [quest2, quest1]
+    assert.deepStrictEqual(hero.questsByGoldReward(), expected)
+  })
+
   it("should be able to select completed quests", () => {
     hero.takeQuest(quest1)
     hero.takeQuest(quest2)

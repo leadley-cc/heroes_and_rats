@@ -36,6 +36,12 @@ Hero.prototype = {
     )
   },
 
+  questsByGoldReward: function () {
+    return this.questLog.sort(
+      (questA, questB) => questA.reward.gold - questB.reward.gold
+    )
+  },
+
   completedQuests: function () {
     return this.questLog.filter(
       quest => quest.completed
