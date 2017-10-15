@@ -18,4 +18,11 @@ const Rat = function (type) {
   this.attack = attackValues[type]
 }
 
+Rat.prototype = {
+  touchFood: function (food) {
+    food.touch()
+    this.health += 1
+  }
+}
+
 module.exports = Rat
