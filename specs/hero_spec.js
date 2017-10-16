@@ -103,45 +103,39 @@ describe("Hero", () => {
     assert.strictEqual(hero.experience, 0)
   })
 
-  it("should be able to sort quest log by difficulty", () => {
-    hero.takeQuest(quest1)
-    hero.takeQuest(quest2)
+  describe("When they have multiple quests on their quest log they", () => {
+    beforeEach(() => {
+      hero.takeQuest(quest1)
+      hero.takeQuest(quest2)
+    })
 
-    var expected = [quest2, quest1]
-    assert.deepStrictEqual(hero.questsByDifficulty(), expected)
-  })
+    it("should be able to sort quest log by difficulty", () => {
+      var expected = [quest2, quest1]
+      assert.deepStrictEqual(hero.questsByDifficulty(), expected)
+    })
 
-  it("should be able to sort quest log by urgency", () => {
-    hero.takeQuest(quest1)
-    hero.takeQuest(quest2)
+    it("should be able to sort quest log by urgency", () => {
+      var expected = [quest2, quest1]
+      assert.deepStrictEqual(hero.questsByUrgency(), expected)
+    })
 
-    var expected = [quest2, quest1]
-    assert.deepStrictEqual(hero.questsByUrgency(), expected)
-  })
+    it("should be able to sort quest log by gold reward", () => {
+      var expected = [quest2, quest1]
+      assert.deepStrictEqual(hero.questsByGoldReward(), expected)
+    })
 
-  it("should be able to sort quest log by gold reward", () => {
-    hero.takeQuest(quest1)
-    hero.takeQuest(quest2)
+    it("should be able to select completed quests", () => {
+      quest1.complete()
 
-    var expected = [quest2, quest1]
-    assert.deepStrictEqual(hero.questsByGoldReward(), expected)
-  })
+      var expected = [quest1]
+      assert.deepStrictEqual(hero.completedQuests(), expected)
+    })
 
-  it("should be able to select completed quests", () => {
-    hero.takeQuest(quest1)
-    hero.takeQuest(quest2)
-    quest1.complete()
+    it("should be able to select incomplete quests", () => {
+      quest1.complete()
 
-    var expected = [quest1]
-    assert.deepStrictEqual(hero.completedQuests(), expected)
-  })
-
-  it("should be able to select incomplete quests", () => {
-    hero.takeQuest(quest1)
-    hero.takeQuest(quest2)
-    quest1.complete()
-
-    var expected = [quest2]
-    assert.deepStrictEqual(hero.incompleteQuests(), expected)
+      var expected = [quest2]
+      assert.deepStrictEqual(hero.incompleteQuests(), expected)
+    })
   })
 })
